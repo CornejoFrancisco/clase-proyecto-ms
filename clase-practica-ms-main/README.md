@@ -10,19 +10,23 @@ nos provee de un listado de endpoint a desarrollar
       total a cobrar para esa compañia (cost_hour del vehiculo por travel_total_hours))
    2. Ingresar un pago, en el body viajan los datos de la fecha de pago, el monto total y el listado de codigos de 
       alquileres que paga
-2. CarRental Controller que tiene los siguientes endpoints que tiene las CRUD operations estandar y:
+   
+2. CarRental Controller que tiene los siguientes endpoints que tiene las CRUD operations estandar y: Listo
    1. Actualizar un alquiler para que se indique pagado, la URI recibe el id del alquiler.
-3. VehicleController que tiene los siguientes endpoints:
+   
+3. VehicleController que tiene los siguientes endpoints: Listo
    1. Listado de vehículos disponibles (todos los datos)
    2. Agregar un nuevo vehículo
    3. Dar de baja un vehículo
    3. Obtener un vehículo por su id
-   4. Actualizar millaje del uso del vehículo  
-3. ClientCompanyController que tiene los siguientes endpoints:
+   4. Actualizar millaje del uso del vehículo
+   
+4. ClientCompanyController que tiene los siguientes endpoints:
    1. Agregar una nueva empresa
    2. Dar de baja una empresa (eso quita todos los empleados), solo si no tiene alquileres impagos
    3. Obtener una empresa por su id
-   4. Asociar un empleado a una empresa
-4. ClientController que tiene solo las CRUD operation estandar.
+   4. Asociar un empleado a una empresa (este no se)
+
+5. ClientController que tiene solo las CRUD operation estandar.
 
 Para facilitar nuestro trabajo a la hora de desarrollar la API solicitada, nos provee del modelo de datos

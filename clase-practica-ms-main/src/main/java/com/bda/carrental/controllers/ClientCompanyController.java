@@ -36,6 +36,26 @@ public class ClientCompanyController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    @PutMapping
+    public ResponseEntity<ClientCompanyDto> update(@RequestBody ClientCompanyDto entity) {
+        clientCompanyService.add(entity);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ClientCompanyDto> update(@RequestBody ClientCompanyDto entity, @PathVariable("id") Long id) {
+        ClientCompanyDto value = clientCompanyService.getById(id);
+        if(value == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+
+        value.setEmailContact(entity.getEmailContact());
+        value.setName(entity.getName());
+        value.setPhoneNumber(entity.getPhoneNumber());
+        clientCompanyService.update(value);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<ClientCompanyDto> delete(@PathVariable("id") Long id) {
         clientCompanyService.delete(id);

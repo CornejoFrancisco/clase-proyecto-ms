@@ -1,12 +1,17 @@
 package com.bda.carrental.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "clients")
+@Entity
+@Table(name = "clients")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor(force = true)
 public class Client {
 
     @Id
@@ -30,6 +35,7 @@ public class Client {
     private LocalDateTime birthDate;
 
     @ManyToOne
-    @JoinColumn(name = "client_company_id")
     private ClientCompany company;
+
+
 }
